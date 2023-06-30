@@ -1,0 +1,65 @@
+body {
+display: flex;
+gap: 4rem;
+align-items: center;
+justify-content: center;
+padding-top: 15rem;
+flex-wrap: wrap;
+
+}
+.section__infos img {
+    
+    height: 6.5rem;
+    width: 6.5rem;
+    border-radius: 0.5rem;
+
+
+}
+.section__infos {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+main {
+    width: 20rem;
+}
+main form {
+    width: 20rem;
+    padding-bottom: 4rem;
+
+}
+
+.section__images-index {
+   width: 100%;
+   display: flex;
+   gap: 0.3rem;
+   justify-content: center;
+}
+.section__images-index div{
+    gap: 10rem;
+    width: 6.5rem;
+}
+
+.division__two {
+padding-top: 2rem;
+}
+.division__change {
+    background-color: aliceblue;
+    padding: 20px;
+    height: 25rem;
+}
+.section__infos span {
+    color: var(--brand200)
+}
+.form__login {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.botton__section {
+    margin-top: 3rem;
+}

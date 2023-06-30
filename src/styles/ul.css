@@ -1,0 +1,12 @@
+.profile__ul li p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    
+  }

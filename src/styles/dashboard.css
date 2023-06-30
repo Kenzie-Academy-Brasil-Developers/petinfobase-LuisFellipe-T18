@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    gap: 1rem;  
+    flex-direction: column;
+    
+}
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+   
+    
+    
+    
+}
+.title__feed {
+    width: 100%;
+
+    
+}
+.title__feed h2 {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+   
+}
+.div__feed {
+    width: 100vw;
+    background: rgb(153, 153, 153);
+    padding: 0.8rem;
+    
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+
