@@ -35,8 +35,71 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+.division__header-dashboard {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.division__creator {
+    display: flex;
+
+}
+.avatar__user {
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
+.avatar__user {
+    cursor: pointer;
+}
+.image__exit {
+    cursor: pointer;
+}
+.division__exit-login {
+    background-color: var(--gray500);
+    padding: 1rem;
+}
 
+button {
+    border: none;
+    background-color: var(--gray500);
+    cursor: pointer;
+    
+}
+
+.hidden {
+    display: none;
+    
+      
+}
+.division-login-name div p {
+    padding-left: 1rem;
+    padding: 0.5rem;
+}
+.division-login-name div {
+    background-color: var(--gray900);
+}
+.button__create-post {
+    width: 8rem;
+    height: 1.8rem;
+}
+.division-login-name {
+    width: 12rem;
+    padding-top: 1.5rem;
+    position: absolute;
+   
+}
+
+.button__exit-login {
+    padding: 10rem;
+    background: var(--gray500);
+}
+.division__exit-login {
+    padding-bottom: 1rem;
+
+}

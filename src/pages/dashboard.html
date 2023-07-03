@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/buttons.css">
+   
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/modals.css">
 
     <title>Dashboard</title>
 </head>
@@ -16,15 +17,28 @@
 <div class="container">
     <header>
         <h1>Petinfo</h1>
-        
-        <div>
-            <button>Criar publicação</button>
-            <img src="" alt="avatar">
+        <div class="division__header-dashboard">
+            <div class="division__creator">
+                <button class="button__create-post">Criar publicação</button>
+                <img class="avatar__user" alt="avatar">
+            </div>
+
+            <div class="division-login-name hidden">
+                <div>
+    
+                    <p class="login__name">login</p>
+                </div>
+                <div class="division__exit-login">
+                    <img class="image__exit button_exit-login" src="../img/sign-out-alt.svg" alt="exit">
+                    <button class="button_exit-login">Sair da conta</button>
+                </div>
+            </div>
+
         </div>
     </header> 
 </div>
 <div class="div__feed">
-    
+
     <div class="container">
     
     <h2>Feed</h2>
@@ -36,10 +50,49 @@
 <ul>
     
 </ul>
-    
+
 </main>
+
+<dialog class="modal__controller">
+        
+    <div class="modal__container">
+        <div class="division__header-modal">
+            <h2>Criar novo post </h2>
+            <button class="button__close">X</button>
+            
+        </div>
+      <form>
+        <div class="division__creat-post">
+            <h3>Título do post</h3> 
+            <input type="text" class="title__post" id="title__post" name="" placeholder="Digite o título aqui...">
+    
+           
+    
+            <label for="content__post">Conteúdo do post</label>
+    
+            <textarea id="content__post" name="post" rows="4" cols="50" placeholder="Desensolva o conteúdo aqui..."></textarea>
+
+        </div>
+        <div class="buttons__new--post">
+   
+
+          <button class="button__cancel-post">Cancelar</button>
+          <button class="button__publish-post" type="submit">Publicar</button>
+
+        </div>
+      </form>
+    </div>
+</dialog>
+
+<dialog>
+</dialog>
+<script type="module" src="../scripts/dashboard.js"></script>
 </body>
 </html>
+        
+    
+      
+    
     
 
     
