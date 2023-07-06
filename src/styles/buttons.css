@@ -42,3 +42,115 @@ button {
 .alert__button:hover {
   background-color: var(--alert200);
 }
+
+.button__create--user {
+  background: none;
+  border: 2px solid var(--gray500);
+
+}
+.access {
+  background: var(--brand100);
+  color: var(--gray900);
+}
+
+.button__create-post {
+  display: flex;
+  background: var(--brand100);
+  color: var(--gray900);
+  align-items: center;
+  justify-content: center;
+  
+}
+.button__edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.3rem;
+  color: var(--gray200);
+  background: var(--gray900);
+  border: 1px solid var(--gray600);
+  font-weight: 600;
+  font-size: 12px;
+}
+.button__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.3rem;
+  color: var(--gray400);
+  background: var(--gray600);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.button__access {
+  text-decoration-line: none;
+  background: none;
+  color: var(--brand200);
+}
+
+.division__exit-login .button__exit-login {
+  width: 12px;
+  padding: 10rem;
+  background: var(--gray500);
+  border-radius: 0;
+}
+
+.button__close-access {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 900;
+  color: var(--gray400);
+  background: var(--gray600);
+}
+
+.button__cancel-delete {
+  background: var(--gray600);
+  color: var(--gray300);
+}
+.button__delete-post {
+  background: var(--alert100);
+  color: var(--gray900);
+}
+
+.button__close-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 900;
+  color: var(--gray400);
+  background: var(--gray600);
+}
+.button__close-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 900;
+  color: var(--gray400);
+  background: var(--gray600);
+}
+.button__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 900;
+  color: var(--gray400);
+  background: var(--gray600);
+}
+.button__cancel-post {
+  background: var(--gray600);
+  color: var(--gray300);
+}
+.button__publish-post {
+  background: var(--brand100);
+  color: var(--gray900);
+}

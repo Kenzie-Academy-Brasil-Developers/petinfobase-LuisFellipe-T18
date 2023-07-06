@@ -1,9 +1,6 @@
 
 import { toast } from "./toast.js" 
 
-
-
-
 const baseUrl = 'http://localhost:3333'
 const green = 'hsl(162, 88%, 26%)'
 export const red = 'hsl(349, 57%, 50%)'
@@ -57,8 +54,9 @@ const user = await fetch(`${baseUrl}/users/profile`, {
     .then( async (response) => {
         
         if(response.ok) {
-            
+           
             const responseUser = await response.json();
+            
             return responseUser
             
             
@@ -102,6 +100,112 @@ export async function createUser(newUserBody) {
     return newUserCreate 
 }
 
+export async function createPost (postBody) {
+    
+    const token = localStorage.getItem('@petInfo:token')
+    const newPost = await fetch(`${baseUrl}/posts/create`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
 
+        },
+        body: JSON.stringify(postBody)
+    }) 
+    .then(async (res) => {
+        const resJson = await res.json()
+
+        if(res.ok) {
+            toast("Post criado com sucesso", green)
+
+            return resJson
+        }else {
+            throw new Error(resJson.message)
+        }
+    })
+    .catch(err => toast(err.message, red))
+
+    return newPost
+}
+
+export async function readAllPosts() {
+    const token = localStorage.getItem('@petInfo:token')
+    
+    const allPosts = await fetch(`${baseUrl}/posts`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+
+        }
+    })
+    .then(res => {
+        
+        if(res.ok) {
+            return res.json()
+        }else {
+            throw new Error('problemas no servidor , tente novamente mais tarde')
+        }
+    })
+    .catch(err => toast(err.mensage, red))
+    
+    return allPosts.reverse()
+    
+}
+
+
+
+export async function updatePost(postId, requestBody) {
+    const token = localStorage.getItem('@petInfo:token')
+    const post = await fetch(`${baseUrl}/posts/${postId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+        
+    },
+    body: JSON.stringify(requestBody)
+})
+.then(async (res) => {
+    const resJson = await res.json()
+    
+    if(res.ok) {
+        toast("Post atualizado com sucesso", green)
+        
+        return resJson
+    }else {
+        throw new Error(resJson.message)
+    }
+})
+.catch(err => toast(err.message, red))
+
+return post
+
+}
+
+ 
+export async function deletePostById(postId) {
+    const token = localStorage.getItem('@petInfo:token')
+    const postdelete = await fetch(`${baseUrl}/posts/${postId}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(async (res) => {
+        const resJson = await res.json()
+        if(res.ok) {
+            toast('Post deletado com sucesso', green)
+            return resJson
+        } else {
+            throw new Error(resJson.message)
+        }
+    })
+    .catch(err => toast(err.message, red))
+    return postdelete
+}
+export async function completePost(postId) {
+    const post = await fetch(`${baseUrl}`)
+}
 
 

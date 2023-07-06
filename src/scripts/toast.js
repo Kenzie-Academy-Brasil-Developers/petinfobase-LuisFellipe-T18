@@ -3,11 +3,13 @@ export function toast(message, color){
         text: message,
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
+        gravity: "bottom", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: color,
+          color: color,
+          background: "#FFFFFF"
+          
         },
         onClick: function(){} // Callback after click
       }).showToast();

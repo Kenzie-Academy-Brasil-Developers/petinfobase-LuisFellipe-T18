@@ -1,6 +1,6 @@
 /* Desenvolva seu código aqui */
 
-import { handleLogin} from "./render.js"
+import { handleLogin } from "./render.js"
  
 
 function goToRegister() {

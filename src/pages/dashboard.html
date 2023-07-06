@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../styles/reset.css">
-   
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/globalStyles.css">
     <link rel="stylesheet" href="../styles/modals.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
 
     <title>Dashboard</title>
 </head>
@@ -45,48 +46,118 @@
 
     </div>
 </div>
-  
+<div class="container">
 
-<ul>
-    
-</ul>
+    <ul class="posts__list">
+        
+    </ul>
+</div>
 
 </main>
 
-<dialog class="modal__controller">
+<dialog class="modal__controller-post">
         
     <div class="modal__container">
         <div class="division__header-modal">
-            <h2>Criar novo post </h2>
+            <h2>Criando novo post </h2>
             <button class="button__close">X</button>
             
         </div>
       <form>
         <div class="division__creat-post">
             <h3>Título do post</h3> 
-            <input type="text" class="title__post" id="title__post" name="" placeholder="Digite o título aqui...">
+            <input type="text" class="create__post" name="title" placeholder="Digite o título aqui...">
     
-           
+            <h3>Conteúdo do post</h3> 
+            <input type="text" class="create__post" id="create__post" name="content" placeholder="Desensolva o conteúdo aqui...">
     
-            <label for="content__post">Conteúdo do post</label>
-    
-            <textarea id="content__post" name="post" rows="4" cols="50" placeholder="Desensolva o conteúdo aqui..."></textarea>
-
         </div>
         <div class="buttons__new--post">
    
 
           <button class="button__cancel-post">Cancelar</button>
-          <button class="button__publish-post" type="submit">Publicar</button>
+          <button class="button__publish-post" id="createPost" type="submit">Publicar</button>
 
         </div>
       </form>
     </div>
 </dialog>
 
-<dialog>
+<dialog class="modal__controller-access">
+    <div class="modal__container-access">
+        <div class="modal__header-access">
+
+            <div class="header__access">
+                <img class="avatar__access" src="" alt="avatar">
+                <p class="name__access">Name</p>
+                <p class="date__access">data</p>
+            </div>
+            <button class="button__close-access">X</button>
+
+        </div>
+      
+        <div class="division__creat-post">
+            <h1 class="title__access" name="title">Título do post</h1> 
+            <p class="content__access" name="content">Post</p>
+        </div>
+      
+    </div>
 </dialog>
+
+<dialog class="modal__controller-edit">
+    <div class="modal__container-edit">
+        <div class="division__header-modal">
+            <h2>Edição </h2>
+            <button class="button__close-edit">X</button>
+            
+        </div>
+      <form>
+        <div class="division__title-post">
+
+            <h2>Título do post</h2> 
+            <input type="text" class="edit__post" id="title__post-edit" name="title">
+
+            <h2>Conteúdo do post</h2> 
+            <input type="text" class="edit__post" id="content__post-edit" name="content">
+
+        </div>
+        <div class="buttons__post-edit">
+   
+
+          <button class="button__cancel-edit">Cancelar</button>
+          <button class="button__publish-edit" type="submit">Salvar Alterações</button>
+
+        </div>
+      </form>
+    </div>
+</dialog>
+
+<dialog class="modal__controller-delete">
+    <div class="modal__container-delete">
+        <div class="header__modal-delete">
+
+            <h2>Confirmação de exclusão</h2>
+            <button class="button__close-delete">X</button>
+
+        </div>
+        <div class="">
+
+            <p>Tem certeza que deseja excluir este post?</p>
+            <p>Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
+        </div>
+        <div class="buttons__delete-post">
+
+            <button class="button__cancel-delete">Cancelar</button>
+            <button class="button__delete-post" type="submit">Sim, excluir este post</button>
+
+        </div>
+
+    </div>
+</dialog>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script type="module" src="../scripts/render.js"></script>
 <script type="module" src="../scripts/dashboard.js"></script>
+
 </body>
 </html>
         

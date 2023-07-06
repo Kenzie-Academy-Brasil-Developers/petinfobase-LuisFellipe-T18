@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
+dialog {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.modal__controller-access {
+    border-radius: 0.4rem;
+}
+.modal__controller-post {
+    border-radius: 0.4rem;
+}
+.modal__controller-edit{
+    border-radius: 0.4rem;
+}
+.modal__controller-delete{
+    border-radius: 0.4rem;
+}
 
 .division__header-modal {
     display: flex;
@@ -22,5 +40,152 @@ textarea {
     resize: none;
   }
 
+.modal__header-access {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.header__access {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.date__access {
+    padding-left: 2rem;
+}
+.avatar__access {
+    width: 1.8rem;
+    height: 1.8rem; 
+    
+}
 
+.avatar__access {
+    width: 1.5rem;
+    height: 1.5rem; 
+    border: 1px solid var(--brand200);
+    border-radius: 50%;
+}
 
+.name__access{
+    color: var(--gray200);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.date__access{
+    color: var(--gray400);
+    padding-left: 2rem;
+    font-size: 0.8rem;
+}
+
+.title__access {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.content__access {
+    color: var(--gray400);
+    font-size: 14px;
+}
+
+.header__modal-delete {
+    display: flex;
+    justify-content: space-between;
+}
+.header__modal-delete h2 {
+    font-size: 1.2rem;
+}
+.modal__container-delete {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 3.8rem;
+    
+}
+.division__texts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.modal__container-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+   
+}
+.buttons__delete-post{
+    display: flex;
+    gap: 0.5rem;
+}
+.division__inputs-post {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form__edit {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.division__buttons-edit {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+}
+.division__header-modal h2{
+    color: var(--gray100);
+
+}
+
+#title__post-edit {
+  
+    border: 1px solid var(--gray500);
+    background: var(--gray600);
+    padding: 0.5rem;
+    
+  
+    border-radius: 0.3rem;
+}
+
+#content__post-edit {
+    
+    border: 1px solid var(--gray500);
+    background: var(--gray600);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+
+}
+
+.division__header-modal h2 {
+    color: var(--gray100);
+    font-size: 1.2rem;
+
+}
+.division__creat-post h3 {
+    color: var(--gray100);
+    font-size: 0.8rem;
+
+}
+.create__post {
+
+    border: 1px solid var(--gray500);
+    background: var(--gray600);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+#create__post[type=text] {
+    display: flex;
+    height: 5px;
+    border: 1px solid var(--gray500);
+    background: var(--gray600);
+    padding: 0.5rem;
+    padding-bottom: 5rem;
+    border-radius: 0.3rem;
+}
+
+    

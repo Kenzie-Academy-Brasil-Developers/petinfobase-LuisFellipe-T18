@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
+
+
 :root {
   --brand100: hsl(230, 57%, 50%);
   --brand200: hsl(230, 68%, 54%);
@@ -16,7 +20,7 @@
 }
 
 body {
-  font-family: "Inter, sans-serif";
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .container {

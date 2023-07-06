@@ -1,17 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+
 body {
     display: flex;
     gap: 1rem;  
     flex-direction: column;
+    font-family: 'IBM Plex Sans', sans-serif;
+    width: 100%;
+    
     
 }
 .container {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-   
-    
-    
-    
+}
+.container h2{
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 .title__feed {
     width: 100%;
@@ -26,9 +31,12 @@ body {
 }
 .div__feed {
     width: 100vw;
-    background: rgb(153, 153, 153);
+    background: var(--gray600);
     padding: 0.8rem;
     
+}
+.container h2 {
+    color: var(--gray100);
 }
 header {
     width: 100%;
@@ -37,6 +45,11 @@ header {
     flex-wrap: wrap;
     padding-top: 3rem;
     padding-bottom: 1rem;
+}
+header h1 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--gray100);
 }
 .division__header-dashboard {
     display: flex;
@@ -56,6 +69,12 @@ header {
 
 .avatar__user {
     cursor: pointer;
+    border: 1px solid var(--brand200);
+    border-radius: 50%;
+}
+
+.division__creator{
+    gap: 0.5rem;
 }
 .image__exit {
     cursor: pointer;
@@ -95,11 +114,64 @@ button {
    
 }
 
-.button__exit-login {
-    padding: 10rem;
-    background: var(--gray500);
-}
 .division__exit-login {
     padding-bottom: 1rem;
 
 }
+
+.avatar__image {
+    width: 1.5rem;
+    height: 1.5rem; 
+    border: 1px solid var(--brand200);
+    border-radius: 50%;
+}
+.posts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-top: 4rem;
+}
+.division__one {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.name__user {
+    padding-left: 0.2rem;
+}
+.division__two {
+    display: flex;
+    align-items: center;
+}
+.date__post{
+    color: var(--gray400);
+    padding-left: 2rem;
+}
+.name__user{
+    color: var(--gray200);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.division__three {
+    display: flex;
+    gap: 1rem;
+}
+.division__four {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2rem;
+    gap: 1rem;
+}
+.division__four h1{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--gray100);
+}
+.division__four p {
+    color: var(--gray400);
+    font-weight: 100;
+}
+
+
+
