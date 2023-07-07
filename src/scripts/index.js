@@ -10,8 +10,8 @@ function goToRegister() {
         location.replace('./src/pages/signup.html')
     })
 }
-goToRegister()
 
+goToRegister()
 handleLogin() 
    
 

@@ -1,5 +1,5 @@
 
-import { loginRequest, red, createUser, user, readAllPosts, updatePost} from "./requests.js"
+import { loginRequest, red, createUser, readAllPosts, updatePost} from "./requests.js"
 import { toast } from "./toast.js"
 
 
@@ -89,13 +89,13 @@ export function readPost() {
 }
 
 export function renderPosts(posts) {
-    
+
     const postsList = document.querySelector('.posts__list')
     postsList.innerHTML = ""
-    const deletebutton = document.querySelector('.button__delete-post')
+    
     
     posts.forEach(element => { 
-        
+
         const cardPost = document.createElement('li');
         
         const divisionOne = document.createElement('div')
@@ -107,7 +107,6 @@ export function renderPosts(posts) {
         
         const divisionThree = document.createElement('div');
         const buttonEdit = document.createElement('button');
-        const buttonDelete = document.createElement('button');
         
         const divisionFour = document.createElement('div')
         const titlePost = document.createElement('h1');
@@ -125,18 +124,30 @@ export function renderPosts(posts) {
         
         divisionThree.classList.add('division__three')
         buttonEdit.classList.add('button__edit')
+        
+        const buttonDelete = document.createElement('button');
         buttonDelete.classList.add('button__delete')
+        buttonDelete.id = "button__delete"
+        buttonDelete.id = element.id 
         
         divisionFour.classList.add('division__four')
         titlePost.classList.add('title__post')
         postBody.classList.add('post__body')
         buttonAccess.classList.add('button__access')
         
-        
-        
+        const loginName = document.querySelector(".login__name")
+        loginName.innerText = element.user.username
+
         avatar.src = element.user.avatar
+        console.log(element.user)
+
         nameUser.innerText = element.user.username
-        datePost.innerText = 'DATA EXEMPLO'
+        const options = {weekday:"long", year:"numeric", month:"long", day:"numeric"}
+        const dateTrated = new Date(element.createdAt).toLocaleString("pt-BR", options)
+
+        datePost.innerText = dateTrated
+
+
         buttonEdit.innerText = 'Editar'
         buttonDelete.innerText = 'Excluir'
         
@@ -144,7 +155,7 @@ export function renderPosts(posts) {
         postBody.innerText = element.content
         buttonAccess.href = element.content
         buttonAccess.innerText = 'Acessar publicação'
-        deletebutton.id = element.id 
+
 
         const modal = editModal(element)
         buttonEdit.addEventListener('click', ()=>{
@@ -164,10 +175,11 @@ export function renderPosts(posts) {
          
         
     })
-    console.log(posts)
+    
 }
 
 function editModal(post) {
+    const bodyPage = document.querySelector('body')
     const modal = document.createElement('dialog')
     modal.classList.add('modal__controller-edit')
     
@@ -221,24 +233,31 @@ function editModal(post) {
     buttonPublish.innerText = "Salvar"
     buttonPublish.classList.add('button__publish-edit')
     
-    const buttonCloseModal = document.querySelector('.button__close-edit')
-    buttonCloseModal.addEventListener('click', (event) =>{
+    
+
+    buttonClose.addEventListener('click', (event) =>{
         event.preventDefault()
-        location.replace('../pages/dashboard.html')
+       modal.close()
     })
 
 
-    buttonPublish.addEventListener('click', async ()=>{
+    buttonPublish.addEventListener('click', async (event)=>{
+        event.preventDefault()
         const idPost = post.id
-        const inputs = querySelectorAll('create__post')
+       
         const newPostEdit = {title:titleInput.value, content:contentInput.value}
         
         if(titleInput.value == "" ||  contentInput.value == "") {
             
             toast('Por favor prencha os campos necessários', red)
         }else {
-            inputs.value = ""
+            
             updatePost(idPost, newPostEdit)
+
+            setTimeout(() => {
+                location.replace("../pages/dashboard.html")
+    
+            }, 1000)
 
             modal.close()
         }
@@ -247,15 +266,16 @@ function editModal(post) {
     })
    
         
-        divisionInputs.append(titlePost, titleInput, contentPost, contentInput)
-        divisionButtons.append(buttonCancel, buttonPublish)
-     editForm.append(divisionInputs, divisionButtons)
+    divisionInputs.append(titlePost, titleInput, contentPost, contentInput)
+    divisionButtons.append(buttonCancel, buttonPublish)
+    editForm.append(divisionInputs, divisionButtons)
 
      modalAccessHeader.append(editTitle, buttonClose)
 
      modalContainer.append(modalAccessHeader, editForm)
 
      modal.appendChild(modalContainer)
+    bodyPage.append(modal)
 
      return modal
 

@@ -1,19 +1,19 @@
-import { handleModal, handleModalEdit, handleModalDelete, handleModalAcess } from "./modals.js";
+import { handleModal, handleModalDelete, handleModalAcess } from "./modals.js";
 import { readPost, renderPosts } from "./render.js";
-import { user, createPost, readAllPosts, updatePost, deletePostById, red} from "./requests.js";
+import { user, createPost, readAllPosts, deletePostById, red} from "./requests.js";
 import { toast } from "./toast.js";
 
+
+let requestUser = await user()
+const avatar = document.querySelector('.avatar__user')
+avatar.src= requestUser.avatar 
 
 async function showPosts() {
     const allPosts = await readAllPosts()
     return allPosts.reverse()
 }
 
-let requestUser = await user()
-const avatar = document.querySelector('.avatar__user')
-avatar.src= requestUser.avatar 
 
-handleModal()
 
 function exitLogin() {
     const buttons = document.querySelectorAll(".button_exit-login"); 
@@ -28,17 +28,25 @@ function exitLogin() {
          })
     } )
 }
-exitLogin()
 
 function openNavBar() {
     const navBar = document.querySelector(".division-login-name")
     const avatar = document.querySelector(".avatar__user")
-
+    
     avatar.addEventListener("click", () => {
         navBar.classList.toggle("hidden")
     })
 }
-openNavBar()
+
+function exitNavBar() {
+    const buttonExitNavBar = document.querySelector(".exit__nav-bar")
+    
+
+    buttonExitNavBar.addEventListener("click", (event) => {
+       event.preventDefault()
+       location.replace("../pages/dashboard.html")
+    })
+}
 
 function handleNewPost() {
     const inputs = document.querySelectorAll(".create__post")
@@ -72,25 +80,33 @@ function handleNewPost() {
 
     
 }
-handleNewPost()
-
-
-
 
 function deletePost () {
-    const deleteButton = document.querySelector('.button__delete-post')
+    const deleteButton = document.querySelector('#button__delete-post')
+    const deleteButtonPost = document.querySelector('.button__delete')
     const cancelDelete = document.querySelector('.button__cancel-delete')
     const closeDelete = document.querySelector('.button__close-delete')
+    const modal = document.querySelector(".modal__controller-delete")
+    
+    deleteButton.id = deleteButtonPost.id
+    
     deleteButton.addEventListener('click', (event) => {
+        
         deletePostById(event.target.id)
+        
+        modal.close()
+        
         setTimeout(() => {
             location.replace("../pages/dashboard.html")
-            
-        }, 1000)
     
+        }, 1000)
         showPosts()
+        
+        
+        
     })
-
+    
+    
     cancelDelete.addEventListener('click', () => {
         location.replace('../pages/dashboard.html')
     })
@@ -99,9 +115,23 @@ function deletePost () {
     })
 }
 
+handleModal()
+exitLogin()
+openNavBar()
+exitNavBar()
+handleNewPost()
 renderPosts(await readAllPosts())
 readPost()
 deletePost()
 handleModalDelete()
 handleModalAcess()
-handleModalEdit()
+
+
+
+
+
+
+
+
+
+

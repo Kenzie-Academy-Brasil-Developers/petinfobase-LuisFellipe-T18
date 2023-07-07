@@ -30,8 +30,9 @@
                     <p class="login__name">login</p>
                 </div>
                 <div class="division__exit-login">
-                    <img class="image__exit button_exit-login" src="../img/sign-out-alt.svg" alt="exit">
+                   
                     <button class="button_exit-login">Sair da conta</button>
+                    <img src="../img/sign-out-alt.svg" class="exit__nav-bar">
                 </div>
             </div>
 
@@ -103,35 +104,6 @@
       
     </div>
 </dialog>
-
-<dialog class="modal__controller-edit">
-    <div class="modal__container-edit">
-        <div class="division__header-modal">
-            <h2>Edição </h2>
-            <button class="button__close-edit">X</button>
-            
-        </div>
-      <form>
-        <div class="division__title-post">
-
-            <h2>Título do post</h2> 
-            <input type="text" class="edit__post" id="title__post-edit" name="title">
-
-            <h2>Conteúdo do post</h2> 
-            <input type="text" class="edit__post" id="content__post-edit" name="content">
-
-        </div>
-        <div class="buttons__post-edit">
-   
-
-          <button class="button__cancel-edit">Cancelar</button>
-          <button class="button__publish-edit" type="submit">Salvar Alterações</button>
-
-        </div>
-      </form>
-    </div>
-</dialog>
-
 <dialog class="modal__controller-delete">
     <div class="modal__container-delete">
         <div class="header__modal-delete">
@@ -148,7 +120,7 @@
         <div class="buttons__delete-post">
 
             <button class="button__cancel-delete">Cancelar</button>
-            <button class="button__delete-post" type="submit">Sim, excluir este post</button>
+            <button class="button__delete-post" id="button__delete-post" type="submit">Sim, excluir este post</button>
 
         </div>
 

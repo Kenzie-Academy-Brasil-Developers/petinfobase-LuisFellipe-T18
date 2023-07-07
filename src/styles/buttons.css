@@ -154,3 +154,35 @@ button {
   background: var(--brand100);
   color: var(--gray900);
 }
+
+.button__cancel-edit {
+  background: var(--gray600);
+  color: var(--gray300);
+}
+.button__publish-edit {
+  background: var(--brand100);
+  color: var(--gray900);
+}
+
+.button_exit-login {
+  color: var(--gray100);
+  background: var(--gray600);
+  width: 100%;
+  height: 50%;
+  border-radius: 0;
+  cursor: pointer;  
+}
+.button_exit-login:hover {
+  color: var(--gray900);
+  background: var(--brand100);
+}
+
+.exit__nav-bar {
+  background: var(--gray600);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.exit__nav-bar:hover {
+  
+  background: var(--gray900);
+}

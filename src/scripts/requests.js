@@ -40,7 +40,6 @@ export async function loginRequest(loginBody) {
     return token
 }
 
-
 export const user = async () => {
 
 const token = localStorage.getItem('@petInfo:token')
@@ -153,8 +152,6 @@ export async function readAllPosts() {
     
 }
 
-
-
 export async function updatePost(postId, requestBody) {
     const token = localStorage.getItem('@petInfo:token')
     const post = await fetch(`${baseUrl}/posts/${postId}`, {
@@ -183,10 +180,9 @@ return post
 
 }
 
- 
 export async function deletePostById(postId) {
     const token = localStorage.getItem('@petInfo:token')
-    const postdelete = await fetch(`${baseUrl}/posts/${postId}`, {
+    const postDelete = await fetch(`${baseUrl}/posts/${postId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -202,10 +198,14 @@ export async function deletePostById(postId) {
         }
     })
     .catch(err => toast(err.message, red))
-    return postdelete
+    
+    return postDelete
 }
-export async function completePost(postId) {
-    const post = await fetch(`${baseUrl}`)
-}
+
+
+
+ 
+
+
 
 

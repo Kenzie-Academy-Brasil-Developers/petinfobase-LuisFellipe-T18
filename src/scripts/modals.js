@@ -21,33 +21,6 @@ export function handleModal(){
     })
 }
 
-export function handleModalEdit() {
-    const editButtons = document.querySelectorAll(".button__edit");
-    const modalContainerEdit = document.querySelector('.modal__controller-edit')
-
-
-    editButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            modalContainerEdit.showModal()
-
-        closeModalEdit()
-        })
-
-    })
-
-
-}
-
-function closeModalEdit() {
-    const button = document.querySelector(".button__close-edit");
-    const modalContainerEdit = document.querySelector('.modal__controller-edit')
-
-    button.addEventListener('click', () => {
-        modalContainerEdit.close();
-        
-    })
-}
-
 export function handleModalDelete() {
     const deleteButtons = document.querySelectorAll(".button__delete");
     const modalContainerDelete = document.querySelector('.modal__controller-delete')
@@ -101,4 +74,5 @@ export function handleModalAcess(){
         
     })
 }
+
 
